@@ -20,7 +20,6 @@ module.exports = {
             const decoded = jwt.verify(token, process.env.JWT_KEY);
             req.userData = decoded;
             if(req.userData.role === 'admin') {
-                console.log('admin');
                 next()
             }
             else throw new Error('Not a Admin')

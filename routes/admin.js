@@ -24,7 +24,7 @@ router.put('/product/:id', async (req,res)=>{
 router.delete('/product/:id', async (req,res)=>{
     try {
         const isProductDelted = await Helper.deleteProduct(req.params.id)
-        res.json(isProductUpdated)
+        res.json(isProductDelted)
     } catch (error) {
         res.status(500).json(error)
     }

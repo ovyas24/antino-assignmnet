@@ -41,9 +41,7 @@ class Helper {
             let updates = {}
             updates.name = name ? name : product.name
             updates.price = price ? price : product.price
-
-            console.log(updates);
-
+            
             const isUpdated = await Product.updateOne({ _id: id }, updates)
 
             return isUpdated
@@ -57,6 +55,7 @@ class Helper {
             const isDeleted = await Product.deleteOne({ _id:id })
             return isDeleted
         } catch (error) {
+            console.log(error);
             return error
         }
     }
